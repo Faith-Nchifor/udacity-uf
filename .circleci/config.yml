@@ -32,11 +32,8 @@ jobs:
       - checkout
       - setup_remote_docker #:
           #version: 20.10.7
-      # Next, the node orb's install-packages step will install the dependencies from a package.json.
-      # The orb install-packages step will also automatically cache them for faster future runs.
-      - node/install-packages:
-          # If you are using yarn, change the line below from "npm" to "yarn"
-          pkg-manager: npm
+    
+     
       - run:
           name: Build app
           command: docker build -t udagram-frontend .
