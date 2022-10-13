@@ -36,16 +36,16 @@ jobs:
      
       - run:
           name: Build app
-          command: docker build -t sn .
+          command: docker build -t uf .
       - run:
           name: Login to Docker
           command: docker login -u faithwenyi -p $pw
       - run:
           name: Tag local repo to remote repo
-          command: docker tag sn faithwenyi/simple-node1 
+          command: docker tag uf faithwenyi/udagram-frontend 
       - deploy:
           name: Push Docker image to docker
-          command: docker push faithwenyi/simple-node1
+          command: docker push faithwenyi/udagram-frontend
 
 workflows:
   # Below is the definition of your workflow.
