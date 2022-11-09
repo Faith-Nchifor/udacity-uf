@@ -42,10 +42,10 @@ jobs:
           command: docker login -u faithwenyi -p $pw
       - run:
           name: Tag local repo to remote repo
-          command: docker tag uf faithwenyi/udagram-frontend 
+          command: docker tag uf faithwenyi/udagram-frontend:lt 
       - deploy:
           name: Push Docker image to docker
-          command: docker push faithwenyi/udagram-frontend
+          command: docker push faithwenyi/udagram-frontend:lt
 
 workflows:
   # Below is the definition of your workflow.
